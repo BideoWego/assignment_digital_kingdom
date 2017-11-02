@@ -28,7 +28,7 @@ db.get = name => {
 };
 
 
-db.save => async (name, data) => {
+db.save = async (name, data) => {
   const collection = await db.get(name);
   data.id = ++ids[name];
   collection[data.id] = data;
@@ -36,7 +36,7 @@ db.save => async (name, data) => {
 };
 
 
-db.update => async (name, id, data) => {
+db.update = async (name, id, data) => {
   const collection = await db.get(name);
   delete data.id;
   Object.assign(collection[id], data);
