@@ -12,9 +12,10 @@ const ids = {
 
 const write = (name, collection, data) => {
   return new Promise((resolve, reject) => {
-    fs.writeFile(`${ dataPath }/${ name }`, collection, err => {
-      err ? reject(err) : resolve(data);
-    });
+    const path = `${ dataPath }/${ name }.json`;
+    const json = JSON.stringify(collection, null, 2);
+    const cb = err => err ? reject(err) : resolve(data);
+    fs.writeFile(path, json, cb);
   });
 };
 
@@ -30,7 +31,10 @@ db.get = name => {
 
 db.save = async (name, data) => {
   const collection = await db.get(name);
-  data.id = ++ids[name];
+  data = {
+    id: ++ids[name],
+    ...data
+  };
   collection[data.id] = data;
   return await write(name, collection, data);
 };
