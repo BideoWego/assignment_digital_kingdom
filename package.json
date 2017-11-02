@@ -1,0 +1,35 @@
+{
+  "name": "assignment_digital_kingdom",
+  "version": "1.0.0",
+  "description": "Build the digital kingdom of your wildest dreams! Populate it with fawning vassals!",
+  "main": "app.js",
+  "directories": {
+    "lib": "lib"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/BideoWego/assignment_digital_kingdom.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/BideoWego/assignment_digital_kingdom/issues"
+  },
+  "homepage": "https://github.com/BideoWego/assignment_digital_kingdom#readme",
+  "dependencies": {
+    "body-parser": "^1.18.2",
+    "cookie-session": "^2.0.0-beta.3",
+    "dotenv": "^4.0.0",
+    "express": "^4.16.2",
+    "express-flash-messages": "^0.1.1",
+    "express-handlebars": "^3.0.0",
+    "express-method-override-get-post-support": "0.0.7",
+    "load-helpers": "^1.0.1",
+    "method-override": "^2.3.10",
+    "morgan": "^1.9.0",
+    "morgan-toolkit": "^1.0.2"
+  }
+}

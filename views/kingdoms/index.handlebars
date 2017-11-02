@@ -1,0 +1,22 @@
+<header class="page-header">
+  <h2>Kingdoms</h2>
+</header>
+
+{{#if kingdoms.length }}
+  <ul class="list-group">
+    {{#each kingdom as |id, kingdom| }}
+    <li>
+      <p>ID: {{ id }}</p>
+      <p>Name: {{ kingdom.name }}</p>
+    </li>
+    {{/each}}
+  </ul>
+{{else }}
+{{/if }}
+
+
+
+
+
+
+
