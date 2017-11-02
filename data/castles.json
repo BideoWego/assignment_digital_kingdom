@@ -1,17 +1,21 @@
 {
   "1": {
+    "id": 1,
     "name": "Castlevania",
     "liegeIds": [1, 2]
   },
   "2": {
+    "id": 2,
     "name": "Camelot",
     "liegeIds": [3, 4]
   },
   "3": {
+    "id": 3,
     "name": "Princess Peach's Castle",
     "liegeIds": [5, 6]
   },
   "4": {
+    "4": 4,
     "name": "Bowser's Castle",
     "liegeIds": [7, 8]
   }
