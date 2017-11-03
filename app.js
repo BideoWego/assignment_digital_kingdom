@@ -81,9 +81,9 @@ app.use(morganToolkit());
 // ----------------------------------------
 // Routes
 // ----------------------------------------
-app.use('/', (req, res) => {
-  res.render('welcome/index');
-});
+const kingdomsRouter = require('./routers/kingdoms');
+
+app.use('/', kingdomsRouter);
 
 
 // ----------------------------------------

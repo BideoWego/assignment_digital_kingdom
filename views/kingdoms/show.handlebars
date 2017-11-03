@@ -1,0 +1,34 @@
+<header class="page-header">
+  <h2>The Kingdom of <strong>{{ kingdom.name }}</strong></h2>
+  <a href="/kingdoms">Back to Kingdoms</a>
+</header>
+
+
+<p>ID: {{ kingdom.id }}</p>
+<p>Name: {{ kingdom.name }}</p>
+<p>King: {{ kingdom.king.name }}</p>
+<p>Queen: {{ kingdom.queen.name }}</p>
+
+
+{{#if (isEmpty kingdom.castles) }}
+  <p class="text-danger">No castles</p>
+{{else }}
+  <p>Castles</p>
+  <ul class="list-group">
+    {{#each kingdom.castles as |castle id| }}
+      <li class="list-group-item">
+        <p>ID: {{ castle.id }}</p>
+        <p>Name: {{ castle.name }}</p>
+        <p>Number of Lieges: {{ castle.lieges.length }}</p>
+      </li>
+    {{/each }}
+  </ul>
+{{/if }}
+
+
+
+
+
+
+
+

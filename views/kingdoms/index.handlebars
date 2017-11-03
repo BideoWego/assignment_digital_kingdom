@@ -1,17 +1,51 @@
 <header class="page-header">
+  <h3>New Kingdom</h3>
+</header>
+
+
+<form action="/kingdoms" method="post">
+  <div class="form-group">
+    <label for="kingdom_name">Kingdom's Name</label>
+    <input type="text" class="form-control" name="kingdom[name]">
+  </div>
+  <div class="form-group">
+    <label for="kingdom_name">King's Name</label>
+    <input type="text" class="form-control" name="kingdom[king]">
+  </div>
+  <div class="form-group">
+    <label for="kingdom_name">Queen's Name</label>
+    <input type="text" class="form-control" name="kingdom[queen]">
+  </div>
+  <div class="form-group">
+    <input type="submit" class="btn btn-primary">
+  </div>
+</form>
+
+
+<header class="page-header">
   <h2>Kingdoms</h2>
 </header>
 
-{{#if kingdoms.length }}
+
+{{#if (isEmpty kingdoms) }}
+  <p class="text-danger">No Kingdoms</p>
+{{else }}
   <ul class="list-group">
-    {{#each kingdom as |id, kingdom| }}
-    <li>
+    {{#each kingdoms as |kingdom id| }}
+    <li class="list-group-item">
       <p>ID: {{ id }}</p>
-      <p>Name: {{ kingdom.name }}</p>
+      <p>
+        Name:
+        <a href="/kingdoms/{{ id }}">
+          {{ kingdom.name }}
+        </a>
+      </p>
+      <p>King: {{ kingdom.king.name }}</p>
+      <p>Queen: {{ kingdom.queen.name }}</p>
+      <p>Number of Castles: {{ kingdom.castleIds.length }}</p>
     </li>
     {{/each}}
   </ul>
-{{else }}
 {{/if }}
 
 
