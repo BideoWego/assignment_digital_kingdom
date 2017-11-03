@@ -82,8 +82,14 @@ app.use(morganToolkit());
 // Routes
 // ----------------------------------------
 const kingdomsRouter = require('./routers/kingdoms');
+const castlesRouter = require('./routers/castles');
+const liegesRouter = require('./routers/lieges');
+const vassalsRouter = require('./routers/vassals');
 
 app.use('/', kingdomsRouter);
+app.use('/castles', castlesRouter);
+app.use('/lieges', liegesRouter);
+app.use('/vassals', vassalsRouter);
 
 
 // ----------------------------------------

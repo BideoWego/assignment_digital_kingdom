@@ -1,0 +1,54 @@
+<header class="page-header">
+  <h2>Liege: <strong>{{ liege.name }}</strong></h2>
+  <a href="/kingdoms">Back to Kingdoms</a>
+</header>
+
+
+<p>ID: {{ liege.id }}</p>
+<p>Name: {{ liege.name }}</p>
+<p>Number of Lieges: {{ liege.liege.length }}</p>
+
+
+<header class="page-header">
+  <h3>New Vassal</h3>
+</header>
+
+
+<form action="/vassals" method="post">
+  <input type="hidden" name="vassal[liege_id]" value="{{ liege.id }}">
+  <div class="form-group">
+    <label for="vassal_name">Vassal's Name</label>
+    <input type="text" class="form-control" name="vassal[name]">
+  </div>
+  <div class="form-group">
+    <input type="submit" class="btn btn-primary">
+  </div>
+</form>
+
+
+{{#if (isEmpty liege.vassals) }}
+  <p class="text-danger">No vassals</p>
+{{else }}
+  <h3>Vassals</h3>
+  <ul class="list-group">
+    {{#each liege.vassals as |vassal| }}
+      <li class="list-group-item">
+        <p>ID: {{ vassal.id }}</p>
+        <p>
+          Name:
+          <a href="/vassals/{{ vassal.id }}">
+            {{ vassal.name }}
+          </a>
+        </p>
+      </li>
+    {{/each }}
+  </ul>
+{{/if }}
+
+
+
+
+
+
+
+

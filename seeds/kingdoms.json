@@ -1,0 +1,22 @@
+{
+  "1": {
+    "id": 1,
+    "name": "Digital",
+    "kingId": 1,
+    "queenId": 1,
+    "castleIds": [
+      1,
+      2
+    ]
+  },
+  "2": {
+    "id": 2,
+    "name": "Viking",
+    "kingId": 2,
+    "queenId": 2,
+    "castleIds": [
+      3,
+      4
+    ]
+  }
+}

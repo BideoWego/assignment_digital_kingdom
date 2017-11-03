@@ -1,0 +1,70 @@
+{
+  "1": {
+    "id": 1,
+    "name": "Luke Skywalker"
+  },
+  "2": {
+    "id": 2,
+    "name": "Han Solo"
+  },
+  "3": {
+    "id": 3,
+    "name": "Chewbacca"
+  },
+  "4": {
+    "id": 4,
+    "name": "Darth Vader"
+  },
+  "5": {
+    "id": 5,
+    "name": "Darth Maul"
+  },
+  "6": {
+    "id": 6,
+    "name": "Princess Leia"
+  },
+  "7": {
+    "id": 7,
+    "name": "Yoda"
+  },
+  "8": {
+    "id": 8,
+    "name": "R2-D2"
+  },
+  "9": {
+    "id": 9,
+    "name": "Padme Amidala"
+  },
+  "10": {
+    "id": 10,
+    "name": "Ahsoka Tano"
+  },
+  "11": {
+    "id": 11,
+    "name": "Jabba the Hutt"
+  },
+  "12": {
+    "id": 12,
+    "name": "Qui-Gon Jinn"
+  },
+  "13": {
+    "id": 13,
+    "name": "Chewbacca"
+  },
+  "14": {
+    "id": 14,
+    "name": "Count Dooku"
+  },
+  "15": {
+    "id": 15,
+    "name": "Asajj Ventress"
+  },
+  "16": {
+    "id": 16,
+    "name": "Lando Calrissian"
+  }
+}
+
+
+
+

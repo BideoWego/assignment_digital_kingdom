@@ -8,17 +8,40 @@
 <p>Name: {{ kingdom.name }}</p>
 <p>King: {{ kingdom.king.name }}</p>
 <p>Queen: {{ kingdom.queen.name }}</p>
+<p>Number of Castles: {{ kingdom.castles.length }}</p>
+
+
+<header class="page-header">
+  <h3>New Castle</h3>
+</header>
+
+
+<form action="/castles" method="post">
+  <input type="hidden" name="castle[kingdom_id]" value="{{ kingdom.id }}">
+  <div class="form-group">
+    <label for="castle_name">Castle's Name</label>
+    <input type="text" class="form-control" name="castle[name]">
+  </div>
+  <div class="form-group">
+    <input type="submit" class="btn btn-primary">
+  </div>
+</form>
 
 
 {{#if (isEmpty kingdom.castles) }}
   <p class="text-danger">No castles</p>
 {{else }}
-  <p>Castles</p>
+  <h3>Castles</h3>
   <ul class="list-group">
-    {{#each kingdom.castles as |castle id| }}
+    {{#each kingdom.castles as |castle| }}
       <li class="list-group-item">
         <p>ID: {{ castle.id }}</p>
-        <p>Name: {{ castle.name }}</p>
+        <p>
+          Name:
+          <a href="/castles/{{ castle.id }}">
+            {{ castle.name }}
+          </a>
+        </p>
         <p>Number of Lieges: {{ castle.lieges.length }}</p>
       </li>
     {{/each }}

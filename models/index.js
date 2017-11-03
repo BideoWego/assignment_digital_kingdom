@@ -71,7 +71,7 @@ const depopulateAll = collection => {
 const db = {};
 
 
-db.get = async name => {
+db.get = async (name) => {
   const collection = require(`${ dataPath }/${ name }`);
   await populateAll(collection);
   return Promise.resolve(collection);
@@ -81,7 +81,6 @@ db.get = async name => {
 db.save = async (name, data) => {
   const collection = await db.get(name);
   const collectionIds = Object.keys(collection);
-  console.log(collectionIds);
   const nextId = Math.max(...collectionIds);
   ids[name] = nextId ? nextId + 1 : 1;
   data = {
@@ -96,7 +95,6 @@ db.save = async (name, data) => {
 
 db.update = async (name, id, data) => {
   const collection = await db.get(name);
-  delete data.id;
   Object.assign(collection[id], data);
   depopulateAll(collection);
   return await write(name, collection, collection[id]);
@@ -106,7 +104,6 @@ db.update = async (name, id, data) => {
 db.find = async (name, id) => {
   const collection = await db.get(name);
   const model = collection[id];
-  await populate(model);
   return Promise.resolve(model);
 };
 
@@ -115,6 +112,7 @@ db.destroy = async (name, id) => {
   const collection = await db.get(name);
   const data = collection[id];
   delete collection[id];
+  depopulateAll(collection);
   return await write(name, collection, data);
 };
 
